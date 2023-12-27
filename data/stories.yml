@@ -1,0 +1,155 @@
+version: "3.1"
+
+stories:
+
+- story: 1st path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: user_policy
+  - action: utter_product_sheet
+  #- action: utter_user_age
+  - intent: affirm
+  - action: utter_travel_claim
+  - intent: affirm
+  - action: utter_health_and_fit
+  - intent: affirm
+  - action: utter_travel_restriction
+  - intent: affirm
+  - action: utter_medical_treatment
+  - intent: affirm
+  - action: utter_eligible_msg
+  - action: utter_trip_purpose
+  - intent: trip_purpose
+  - action: utter_trip_policy
+  - intent: trip_policy
+  - action: utter_cover_trip
+  # - intent: cover_trip
+  
+ 
+
+# - story: user question
+#   steps:
+#   - intent: trip_purpose
+#   - action: utter_trip_policy
+#   - intent: trip_policy
+#   - action: utter_cover_trip
+#   - intent: cover_trip
+#   - action: utter_country_name
+#   - intent: nation
+
+# - story: user form for travel date
+#   steps:
+#   - intent: nation
+#   - action: user_form
+#   - active_loop: user_form
+#   - slot_was_set:
+#     - requested_slot: travel_date
+#   - intent: travel_date
+#   - action: user_form
+#   - active_loop: null
+
+# - story: user form for arrival date
+#   steps:
+  # - action: user_form
+  # - active_loop: user_form
+  # - slot_was_set:
+  #   - requested_slot: arrival_date
+  # - intent: arrival_date
+  # - action: utter_info_msg
+  # - action: utter_plan
+  # - intent: plan
+  # - action: utter_final_details
+  # - action: user_form
+  # - active_loop: null
+
+# - story: end question
+#   steps:
+#   - intent: arrival_date
+#   - action: utter_info_msg
+#   - action: utter_plan
+#   - intent: plan
+#   - action: utter_final_details
+
+- story: 2nd path
+  steps: 
+  - intent: user_policy
+  - action: utter_product_sheet
+  #- action: utter_user_age
+  - intent: affirm
+  - action: utter_travel_claim
+  - intent: affirm
+  - action: utter_health_and_fit
+  - intent: affirm
+  - action: utter_travel_restriction
+  - intent: affirm
+  - action: utter_medical_treatment
+  - intent: deny
+  - action: utter_no_response
+
+- story: 3rd path
+  steps:
+  - intent: user_policy
+  - action: utter_product_sheet
+  #- action: utter_user_age
+  - intent: deny
+  - action: utter_no_response
+
+- story: 4th path
+  steps:
+  - intent: user_policy
+  - action: utter_product_sheet
+  #- action: utter_user_age
+  - intent: affirm
+  - action: utter_travel_claim
+  - intent: deny
+  - action: utter_no_response
+
+- story: 5th path
+  steps:
+  - intent: user_policy
+  - action: utter_product_sheet
+  #- action: utter_user_age
+  - intent: affirm
+  - action: utter_travel_claim
+  - intent: affirm
+  - action: utter_health_and_fit
+  - intent: deny
+  - action: utter_no_response
+
+- story: 6th path
+  steps:
+  - intent: user_policy
+  - action: utter_product_sheet
+  #- action: utter_user_age
+  - intent: affirm
+  - action: utter_travel_claim
+  - intent: affirm
+  - action: utter_health_and_fit
+  - intent: affirm
+  - action: utter_travel_restriction
+  - intent: deny
+  - action: utter_no_response
+
+- story: 7th path
+  steps:
+  - intent: user_policy
+  - action: utter_product_sheet
+  #- action: utter_user_age
+  - intent: affirm
+  - action: utter_travel_claim
+  - intent: affirm
+  - action: utter_health_and_fit
+  - intent: affirm
+  - action: utter_travel_restriction
+  - intent: affirm
+  - action: utter_medical_treatment
+  - intent: deny
+  - action: utter_no_response
+
+
+
+
+
+
+  

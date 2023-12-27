@@ -1,0 +1,201 @@
+version: "3.1"
+
+intents:
+  - greet
+  - user_policy
+  - trip_purpose
+  - trip_policy
+  - cover_trip
+  - nation
+  - country_name
+  - travel_date
+  - arrival_date
+  - plan
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+
+entities:
+  # - trip_purpose
+  # - trip_policy
+  # - cover_trip
+  - country_name
+  - travel_date
+  - arrival_date
+
+
+slots:
+  # trip_purpose:
+  #   type: text
+  #   mappings:
+  #   - type: from_text
+  #     conditions:
+  #     - active_loop: user_form
+  #       requested_slot: trip_purpose
+
+  # trip_policy:
+  #   type: text
+  #   mappings:
+  #   - type: from_text
+  #     conditions:
+  #     - active_loop: user_form
+  #       requested_slot: trip_policy
+
+  # cover_trip:
+  #   type: text
+  #   mappings:
+  #   - type: from_text
+  #     conditions:
+  #     - active_loop: user_form
+  #       requested_slot: cover_trip
+
+  country_name:
+    type: text
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: user_form
+        requested_slot: country_name
+
+  travel_date:
+    type: text
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: user_form
+        requested_slot: travel_date
+
+  arrival_date:
+    type: text
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: user_form
+        requested_slot: arrival_date
+
+  info_msg:
+    type: text
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: user_form
+        requested_slot: info_msg
+
+  plan:
+    type: text
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: user_form
+        requested_slot: plan
+
+  final_details:
+    type: text
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: user_form
+        requested_slot: final_details
+
+
+
+
+forms:
+  user_form:
+    required_slots:
+      # - trip_purpose
+      # - trip_policy
+      # - cover_trip
+      - country_name
+      - travel_date
+      - arrival_date
+      - info_msg
+      - plan
+      - final_details
+    
+
+responses:
+  utter_greet:
+  - text: |
+      Welcome to Liberty Travel Insurance Assistant.
+      Get an instant travel insurance for your jouyful journey through our Travel Supreme cover. 
+      Are you looking for a new policy? Or Would like to view your existing policy details.
+
+  utter_product_sheet:
+  - text: |
+      Before proceeding please read the Product Disclosure Sheet.
+      [Eng] http://www.kurnia.com/pds/PDS-Kurnia-Travel-Supreme-Eng-K.pdf?_ga=2.28471103.262560499.1640152186-88808221.1632823752
+      [BM] https://www.kurnia.com/pds/PDS-Kurnia-Travel-Supreme-BM-K.pdf?_ga=2.178101869.911718102.1640531132-88808221.1632823752 
+      Before you decide to purchase this policy to ensure that it meets your requirements.
+      1 Are you between 18 and 80 years of age?
+  
+  utter_no_response:
+  - text: "We are sorry that your answer seems to be a risk and not eligible to cover for travel insurance."
+
+  utter_travel_claim:
+  - text: "2.Have you made more than 1 travel claim in the last 2 years?"
+
+  utter_health_and_fit:
+  - text: "3.Are you healthy and fit to travel with no pre-existing conditions in the past 12 months?"
+
+  utter_travel_restriction:
+  - text: "4.Do you have any medical travel restrictions?"
+
+  utter_medical_treatment:
+  - text: "5.Are you travelling for medical treatment?"
+
+  utter_eligible_msg:
+  - text: "Good! You are perfectly eligible to purchase our Travel Suprme coverage. Here we go.."
+
+  utter_trip_purpose:
+  - text: "What is the trip purpose (Personal)?"
+
+  utter_trip_policy:
+  - text: "What type of policy (Single Trip)?"
+
+  utter_cover_trip:
+  - text: "Who would you like to cover for (Individual)?"
+
+  utter_ask_country_name:
+  - text: "Where are you travelling to?"
+
+  utter_ask_travel_date:
+  - text: "Please enter the Departure Date from Malasiya?"
+
+  utter_ask_arrival_date:
+  - text: "Please enter the Arrival Date"
+
+  utter_ask_info_msg:
+  - text: "You have chosen Single Trip policy for Personal purpose travelling to {country_name}. Your coverage starts on {travel_date} and ends on {arrival_date}."
+
+  utter_ask_plan:
+  - text: |
+      We have two Plans for you to cover for Travel Insurance
+      Plan A - with premium RM (premium_a). [Please click here to read the benefits](https://kec.kgisl.com/getportalqa/kts/insure)
+      Plan B - with premium RM (premium_b). [Please click here to read the benefits](https://kec.kgisl.com/getportalqa/kts/insure)
+
+  utter_ask_final_details:
+  - text: |
+      Good Choice, please furnish the travel person details.
+      [Click here to read the benefits](https://kec.kgisl.com/getportalqa/kts/insure)"
+
+
+  utter_goodbye:
+  - text: "Thank you have a nice day a head"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by KGISL."
+
+actions:
+  - form_validation
+  - ask_info_msg
+  # - ask_plan
+  - get_personal_single_individual_plan_details
+  
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

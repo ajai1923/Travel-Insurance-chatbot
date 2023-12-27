@@ -1,0 +1,47 @@
+<!-- <html>
+  
+<body>
+  <style>
+    .rw-conversation-container .rw-header{background-color: #3b09f0;}
+    .rw-conversation-container .rw-message .rw-response{background-color: #94c6d3;}
+    .rw-launcher{background-color: #fa0303;}
+    .conversation-container .buttons {display:block}
+
+  </style>
+    <script>!(function () {
+        let e = document.createElement("script"),
+          t = document.head || document.getElementsByTagName("head")[0];
+        (e.src =
+          "https://cdn.jsdelivr.net/npm/rasa-webchat/lib/index.js"),
+         
+          (e.async = !0),
+          (e.onload = () => {
+            window.WebChat.default(
+              {
+                initPayload: '/start',  
+                customData: { language: "en" },
+                socketUrl: "http://localhost:5005",
+                title: "KGISL",
+                subtitle: "Your complete Assistance",
+                inputTextFieldHint: "Your Response.....",
+                autoClearCache: true,
+                showMessageDate: true,
+                showFullScreenButton: true,
+                tooltipPayload: true,
+                params:{storage:"session"}
+
+              },
+              null
+            );
+          }),
+          t.insertBefore(e, t.firstChild);
+          window.localstorage.clear();
+          
+        })();
+</script>
+
+
+
+</body>
+
+</html> -->

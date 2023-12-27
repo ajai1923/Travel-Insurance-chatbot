@@ -1,0 +1,70 @@
+<html>
+  <body>
+  <div id="rasa-chat-widget"
+    data-websocket-url="http://localhost:5005"
+    data-initial-payload = "/greet"
+    data-height = 450
+    data-default-open = true >
+  </div>
+  <script src="https://unpkg.com/@rasahq/rasa-chat" type="application/javascript">
+  </script>
+  </body>
+</html>
+<!-- <html>
+<body>
+  data-avatar-url = "https://www.kgisl.com/wp-content/uploads/2022/06/bot-fav-icon.png"
+    data-avatar-background = ""
+    data-title = "KGISL"
+  <!-- Chatbot section -->
+ <!-- <head>
+   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+ </head>
+ 
+ <style>
+   .rw-conversation-container .rw-header{background-color: #3456ff;}
+   .rw-conversation-container .rw-message .rw-response{background-color: #fd794f;}
+   .rw-launcher{background-color: #57be6c}
+  /* .rw-conversation-container .rw-message .rw-response{text-align: justify;}  */
+   .rw-conversation-container .rw-message .rw-response{font-family: Noto Sans;}
+ </style>
+ <div id="rasa-chat-widget" data-websocket-url="https://24ee-103-118-172-2.ngrok.io" ></div>
+   <script>!(function () {
+       let e = document.createElement("script"),
+         t = document.head || document.getElementsByTagName("head")[0];
+       (e.src = "https://cdn.jsdelivr.net/npm/rasa-webchat/lib/index.js"),
+         (e.async = !0),
+         (e.onload = () => {
+           window.rasa-WebChat.default(
+             {
+               initPayload: '/greet',  
+               customData: { language: "en" },
+               socketUrl: "https://24ee-103-118-172-2.ngrok.io",
+               title: "KGiSL",
+               subtitle: "Empathy-based outcomes",
+               inputTextFieldHint: "Start typing a message.....",
+               autoClearCache: true,
+               showMessageDate: true,
+               profileAvatar: "https://www.kgisl.com/wp-content/uploads/2022/06/bot-fav-icon.png",
+               openLauncherImage:"https://www.kgisl.com/wp-content/uploads/2022/06/bot-fav-icon.png",
+              //  params: {
+              //   storage: 'local'
+              //  },
+               docViewer: true
+               // showFullScreenButton: true,
+               // tooltipPayload: true,
+               // openLauncherImage: 'C:\Users\BCP\Downloads\kgisl-logo.png'
+             },
+             null
+           );
+           // <input type="text" x-webkit-speech />
+           params:{
+               storage: "session";
+             }
+         }),
+         t.insertBefore(e, t.firstChild);
+         window.localstorage.clear();
+         
+     })();
+</script>
+
+</html> -->
